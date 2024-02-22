@@ -48,26 +48,6 @@ fetchData();
 //         //catch is code of handle the errors 
 //     }
 // }
-// async function fetchData() {
-//     try {
-//         const pokemonName = document.getElementById("pokemonName").value;
-//         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-
-//         if (!response.ok) {
-//             throw new Error("Could not fetch resource");
-//         }
-
-//         const data = await response.json();
-//         const pokemonSprite = data.sprites.front_default
-//         const imgElement = document.getElementById("pokemonSprite");
-//         imgElement.src = pokemonSprite;
-//         imgElement.style.display = "block"
-
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }   
-
 async function fetchData() {
     try {
         const pokemonName = document.getElementById("pokemonName").value;
@@ -78,12 +58,28 @@ async function fetchData() {
         }
 
         const data = await response.json();
-        const pokemonSprite = data.sprites.front_default;
-
+        const pokemonSprite = data.sprites.front_default
         const imgElement = document.getElementById("pokemonSprite");
         imgElement.src = pokemonSprite;
-        imgElement.style.display = "block";
+        imgElement.style.display = "block"
+
     } catch (error) {
         console.error(error);
     }
 }
+
+
+// Method of the add the new user 
+fetch('https://reqres.in/api/users', {
+    method: 'POST',
+    headers: {//At here header is for name add the name of the user 
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify({//this method to convert the javascript value to JSONstring 
+        name: "User 1"
+    })
+}).then(res => {
+    return res.json()
+})
+    .then(data => console.log(data))
+    .catch(error => console.log('ERROR'))
