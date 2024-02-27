@@ -28,8 +28,8 @@
 // .then(data => console.log(data.id))
 // .catch(error => console.error(error));
 
-fetchData();
-//async is to check the procedure to set the correct path 
+// fetchData();
+//async is the always return the promises if any values in that function to wrap that values and given. 
 // async function fetchData() {
 //     try {// try is the block in side the block of the code to try the tested the errors after the allows the catch
 //         const pokemonName = document.getElementById("pokemonName").Value;
@@ -83,3 +83,8 @@ fetch('https://reqres.in/api/users', {
 })
     .then(data => console.log(data))
     .catch(error => console.log('ERROR'))
+
+//async is the always return the promises if any values in that function to wrap that values and given.
+//async and await both are use to handle the promises
+//await is only wrote inside of the async function and also used in async function 
+
